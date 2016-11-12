@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<ul id="towns">
+    <li>Sofia</li>
+    <li>Pleven</li>
+    <li>Varna</li>
+    <li>Plovdiv</li>
+</ul>
+
+<input type="text" id="searchText" />
+<button onclick="search()">Search</button>
+<button onclick="search1()">Search1</button>
+
+<div id="result"></div>
+
+<script>
+    function search() {
+        let searchText=$('#searchText').val();
+        let matches=0;
+
+        $('#towns li').each((index,item)=>{
+            if(item.textContent.includes(searchText)){
+                $(item).css("font-weight","bold");
+                matches++
+            }else {
+                $(item).css("font-weight","");
+            }
+        });
+        $('#result').text(matches + " matches found.");
+    }
+</script>
+
+<script>
+    function search1() {
+        let searchText=$("#searchText").val();
+        let count=0;
+
+        $("#towns li").each(function () {
+            if($(this).text().indexOf(searchText) != -1){
+                $(this).css('font-weight','bold');
+                count++
+            }
+            else {
+                $(this).css('font-weight'," ")
+            }
+        });
+        $("#result").text(count + " matches found.")
+    }
+</script>
+
+
+
+</body>
+</html>

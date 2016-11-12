@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<script>
+
+    let div = $('<div>'); // Creating
+    div.text('I am a new div.');
+    div.css('background','blue');
+    div.css('color','white');
+    $('body').append(div);
+
+    let paragrahp=$('<p>Some text</p>');
+    paragrahp.appendTo(div);
+
+    $('div').remove(); // Deleting
+
+</script>
+</body>
+</html>

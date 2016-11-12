@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>List of Items</h1>
+<ul id="items"></ul>
+<input type="text" id="newText" />
+<input type="button" value="Add"
+       onclick="addItem()">
+<script>
+    function addItem() {
+        let newItem=$('#newText').val();
+        let li=$('<li>');
+        let ul=$('#items');
+        li.append(newItem)
+                .append(' ')
+                .append($("<a href='#'>[Delete]</a>").click(deleteItem));
+        ul.append(li);
+        $('#newText').val('');
+
+        function deleteItem() {
+            let li=$(this).parent();
+            li.fadeOut(function () {
+                li.remove()
+            })
+        }
+    }
+</script>
+
+</body>
+</html>

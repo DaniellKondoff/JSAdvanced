@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<div id="wrapper">
+    <input type="text" id="firstNumber" value="13.33">
+    <input type="text" id="secondNumber" value="22.18">
+
+    <div id="result"></div>
+</div>
+<script src="subtract.js"></script>
+
+
+<script>
+    window.onload = function () {
+        function subtract() {
+            let firstNumber=$('#firstNumber').val();
+            let secondNumber=$('#secondNumber').val();
+            let result= parseFloat(firstNumber)-parseFloat(secondNumber);
+            let resultDiv=$('#result');
+            resultDiv[0].textContent=result
+        }
+    }
+</script>
+
+</body>
+</html>
